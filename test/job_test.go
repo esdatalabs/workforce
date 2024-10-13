@@ -31,3 +31,16 @@ func Test_JobProcessesSuccessfully(t *testing.T) {
 		t.Errorf("Expected %s to be cast to int successfully: %s", "3", result.Err.Error())
 	}
 }
+
+func Test_JobProcessingFails(t *testing.T) {
+
+	ctx := context.TODO()
+
+	job2 := workforce.NewJob("String to integer casting should fail", "thesed", castToInt)
+
+	resp := job2.Execute(ctx)
+
+	if resp.Err == nil {
+		t.Errorf("Expected %s to failed being cast to int", "thesed")
+	}
+}
