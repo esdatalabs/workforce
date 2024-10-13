@@ -47,6 +47,13 @@ func (p *Pool) Run(ctx context.Context) {
 		go worker(ctx, wg, p.Inbox, p.Outbox)
 	}
 
+	//Wait until all jobs have been processed
+	wg.Wait()
+
+	//Close all open channels
+	close(p.Done)
+	close(p.Outbox)
+
 }
 
 func worker(ctx context.Context, wg *sync.WaitGroup, inbox <-chan Job, outbox chan<- Result) {
