@@ -1,0 +1,24 @@
+name: golangci-lint
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+permissions:
+  contents: read # Optional: allow read access to pull request. Use with `only-new-issues` option.
+
+jobs:
+  golangci:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22' # Specify your desired Go version
+          cache: true
+      - uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.59.1 # Specify the golangci-lint version
+          args: --timeout=5m # Example argument: set a timeout for linting
