@@ -1,11 +1,10 @@
-package workforce_test
+package workforce
 
 import (
 	"context"
 	"fmt"
 	"testing"
 	"time"
-	"workforce"
 )
 
 const (
@@ -14,14 +13,14 @@ const (
 )
 
 // Helper function to generate a slice of jobs
-func jobs() []workforce.Job {
+func jobs() []Job {
 
 	//Make a new slice with size capped at number of jobs
-	bulk := make([]workforce.Job, numberOfJobs)
+	bulk := make([]Job, numberOfJobs)
 
 	for i := 0; i < numberOfJobs; i++ {
 
-		bulk[i] = workforce.NewJob(
+		bulk[i] = NewJob(
 			fmt.Sprintf("This is job %v, to be converted to int", i),
 			fmt.Sprintf("%v", i),
 			castToInt,
@@ -34,7 +33,7 @@ func jobs() []workforce.Job {
 func Test_Pool(t *testing.T) {
 
 	//Create the pool
-	pool := workforce.NewPool(numberOfJobs)
+	pool := NewPool(numberOfJobs)
 
 	//Initialized the workers
 	go pool.Run(context.TODO())
@@ -69,7 +68,7 @@ func Test_Pool(t *testing.T) {
 func Test_PoolContextTimeout(t *testing.T) {
 
 	//Create the pool
-	pool := workforce.NewPool(numberOfJobs)
+	pool := NewPool(numberOfJobs)
 
 	//Cancel the context after some time
 	ctx, cancel := context.WithTimeout(context.TODO(), time.Nanosecond*10)

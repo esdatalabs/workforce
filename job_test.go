@@ -1,14 +1,13 @@
-package workforce_test
+package workforce
 
 import (
 	"context"
 	"errors"
 	"strconv"
 	"testing"
-	"workforce"
 )
 
-var castToInt workforce.ExecuteFunction = func(ctx context.Context, thingToCast interface{}) (interface{}, error) {
+var castToInt ExecuteFunction = func(ctx context.Context, thingToCast interface{}) (interface{}, error) {
 
 	maybeAnInt, ok := thingToCast.(string)
 
@@ -23,7 +22,7 @@ func Test_JobProcessesSuccessfully(t *testing.T) {
 
 	ctx := context.TODO()
 
-	job1 := workforce.NewJob("String to integer casting", "3", castToInt)
+	job1 := NewJob("String to integer casting", "3", castToInt)
 
 	result := job1.Execute(ctx)
 
@@ -36,7 +35,7 @@ func Test_JobProcessingFails(t *testing.T) {
 
 	ctx := context.TODO()
 
-	job2 := workforce.NewJob("String to integer casting should fail", "thesed", castToInt)
+	job2 := NewJob("String to integer casting should fail", "thesed", castToInt)
 
 	resp := job2.Execute(ctx)
 
