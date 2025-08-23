@@ -1,2 +1,2 @@
-# workforce
-Barebones implementation of the worker pool pattern
+# Workforce
+Barebones implementation of the worker pool (Fan Out/In) pattern in go
