@@ -1,4 +1,4 @@
-name: golangci-lint
+name: Workforce CI Pipeline
 on:
   push:
     branches:
@@ -13,12 +13,18 @@ jobs:
     name: Lint-it
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - name: Check Out Code
+        uses: actions/checkout@v4
+      - name: Setup Go Environment
+        uses: actions/setup-go@v5
         with:
           go-version: '1.22' # Specify your desired Go version
           cache: true
+      - name: Build
+        
       - uses: golangci/golangci-lint-action@v6
         with:
           version: v1.59.1 # Specify the golangci-lint version
           args: --timeout=5m # Example argument: set a timeout for linting
+      - name: Run Go tests
+        run: go test -v ./...    
