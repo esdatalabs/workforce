@@ -27,5 +27,4 @@ jobs:
       - name: Lint it
         uses: golangci/golangci-lint-action@v6
         with:
-          version: v1.59.1 # Specify the golangci-lint version
           args: --timeout=5m # Example argument: set a timeout for linting
