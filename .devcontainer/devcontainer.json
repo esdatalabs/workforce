@@ -3,7 +3,7 @@
 	"name": "Go",
 	"image": "mcr.microsoft.com/devcontainers/go:1.25-trixie",
 	"mounts": [
-		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly"
+		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/root/.ssh,readonly"
 	],
 	"workspaceMount": "source=${localEnv:HOME}/Projects,target=/workspace,type=bind",
 	"workspaceFolder": "/workforce"
