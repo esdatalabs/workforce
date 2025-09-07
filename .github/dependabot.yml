@@ -4,17 +4,19 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 # https://containers.dev/guide/dependabot
 version: 2
+
+multi-ecosystem-groups:
+  bau-deps:
+    schedule:
+      interval: "daily"
+
 updates:
   - package-ecosystem: "devcontainers"
     directory: "/"
-    schedule:
-      interval: weekly
+    multi-ecosystem-group: "bau-deps"
   - package-ecosystem: gomod
     directory: "/"
-    schedule:
-      interval: weekly
+    multi-ecosystem-group: "bau-deps"
   - package-ecosystem: "github-actions"
     directory: "/"
-    schedule:
-      # Check for updates to GitHub Actions every week
-      interval: "weekly"
+    multi-ecosystem-group: "bau-deps"
