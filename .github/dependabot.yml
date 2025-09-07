@@ -13,10 +13,13 @@ multi-ecosystem-groups:
 updates:
   - package-ecosystem: "devcontainers"
     directory: "/"
+    patterns: ["*"]
     multi-ecosystem-group: "bau-deps"
   - package-ecosystem: gomod
     directory: "/"
+    patterns: ["*"]
     multi-ecosystem-group: "bau-deps"
   - package-ecosystem: "github-actions"
     directory: "/"
+    patterns: ["*"]
     multi-ecosystem-group: "bau-deps"
