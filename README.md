@@ -2,3 +2,17 @@
 
 # Workforce
 Barebones implementation of the worker pool (Fan Out/In) pattern in go
+
+## Fan Out/Fan In
+
+```mermaid
+flowchart LR
+    D(job_n . . . job_1, job_0 )
+    D --> B[worker_0]
+    D --> C[worker_1]
+    D --> E[worker_n]
+    F(result_n . . .result_1, result_0)
+    B --> F
+    C --> F
+    E --> F
+```
