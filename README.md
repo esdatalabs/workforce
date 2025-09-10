@@ -20,7 +20,7 @@ flowchart LR
 ## Installation
 
 ```sh
-# WIP
+
 ```
 
 ## Usage
