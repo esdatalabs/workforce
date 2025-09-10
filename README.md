@@ -20,6 +20,7 @@ flowchart LR
 ## Installation
 
 ```sh
+go get . . 
 ```
 
 ## Usage
