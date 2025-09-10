@@ -16,3 +16,15 @@ flowchart LR
     C --> F
     E --> F
 ```
+
+## Installation
+
+```sh
+# WIP
+```
+
+## Usage
+
+[Batch Processing](./examples/batches/main.go)
+
+[Stream Processing](./examples/streaming/main.go)
