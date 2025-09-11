@@ -25,4 +25,4 @@ go install github.com/esdatalabs/workforce@latest
 
 ## Usage
 
-[Batch Processing](./examples/batches/README.md)
+[Batch Processing](./examples/batches/main.go)
