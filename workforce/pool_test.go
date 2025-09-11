@@ -8,8 +8,7 @@ import (
 )
 
 const (
-	numberOfJobs    = 2
-	numberOfWorkers = 1
+	numberOfJobs = 2
 )
 
 // Helper function to generate a slice of jobs

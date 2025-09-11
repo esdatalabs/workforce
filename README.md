@@ -20,11 +20,9 @@ flowchart LR
 ## Installation
 
 ```sh
-go get . . 
+go install github.com/esdatalabs/workforce@latest
 ```
 
 ## Usage
 
-[Batch Processing](./examples/batches/main.go)
-
-[Stream Processing](./examples/streaming/main.go)
+[Batch Processing](./examples/batches/README.md)

@@ -5,5 +5,10 @@
 	"mounts": [
 		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly,consistency=cached",
 		"type=bind,source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,readonly,consistency=cached"
-	]
+	],
+	"containerEnv": {
+        "GOPRIVATE": "github.com/esdatalabs/*",
+        "GONOPROXY": "github.com/esdatalabs/*",
+        "GONOSUMDB": "github.com/esdatalabs/*"
+    }
 }
