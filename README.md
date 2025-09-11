@@ -1,4 +1,4 @@
-[![Workforce CI Pipeline](https://github.com/esdatalabs/workforce/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/esdatalabs/workforce/actions/workflows/ci.yml)
+[![Workforce CI Pipeline](https://github.com/esdatalabs/workforce/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/esdatalabs/workforce/actions/workflows/ci.yml) [![CodeQL Advanced](https://github.com/esdatalabs/workforce/actions/workflows/codeql.yml/badge.svg)](https://github.com/esdatalabs/workforce/actions/workflows/codeql.yml)
 
 # Workforce
 Barebones implementation of the worker pool (Fan Out/In) pattern in go
