@@ -24,7 +24,7 @@ var castToInt workforce.ExecuteFunction = func(ctx context.Context, thingToCast 
 	return strconv.Atoi(maybeAnInt)
 }
 
-// Helper function to generate a slice of jobs
+// Helper function to generate a batch of jobs
 func batchJobs() []workforce.Job {
 
 	//Make a new slice with size capped at number of jobs

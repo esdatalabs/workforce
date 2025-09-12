@@ -66,7 +66,6 @@ func worker(ctx context.Context, wg *sync.WaitGroup, inbox <-chan Job, outbox ch
 		//A message is recieved in the inbox
 		case job, ok := <-inbox:
 			//Terminate worker when inbox recieves a message that's not a valid job
-			//T
 			if !ok {
 				return
 			}

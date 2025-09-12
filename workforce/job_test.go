@@ -7,10 +7,12 @@ import (
 	"testing"
 )
 
+// The 'work' being done is casting the input to an int
 var castToInt ExecuteFunction = func(ctx context.Context, thingToCast interface{}) (interface{}, error) {
 
 	maybeAnInt, ok := thingToCast.(string)
 
+	// Return an error if casting fails for any reason
 	if !ok {
 		return nil, errors.New("The provided variable cannot be cast to an int")
 	}

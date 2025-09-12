@@ -23,6 +23,6 @@ flowchart LR
 go install github.com/esdatalabs/workforce@latest
 ```
 
-## Usage
+## Usage Example
 
 [Batch Processing](./examples/batches/main.go)
