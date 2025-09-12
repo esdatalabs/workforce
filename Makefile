@@ -11,4 +11,7 @@ feature:
 	git commit -m "feat: $(msg)"
 
 fix: 
-	git commit -m "fix: $(msg)"	
+	git commit -m "fix: $(msg)"
+
+breaking:
+	git commit -m "feat!: $(msg)"

@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	numberOfJobs = 2
+	numberOfJobs = 3
 )
 
 // Helper function to generate a slice of jobs
@@ -18,7 +18,7 @@ func jobs() []Job {
 	bulk := make([]Job, numberOfJobs)
 
 	for i := 0; i < numberOfJobs; i++ {
-
+		// Populate the slice with simple jobs
 		bulk[i] = NewJob(
 			fmt.Sprintf("This is job %v, to be converted to int", i),
 			fmt.Sprintf("%v", i),

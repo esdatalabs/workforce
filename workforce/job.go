@@ -31,6 +31,7 @@ func NewJob(desc string, args interface{}, exec ExecuteFunction) Job {
 // The Execute function is triggered by a worker in worker pool
 func (j *Job) Execute(ctx context.Context) Result {
 
+	// Invoke the underlying unit of work
 	value, err := j.executable(ctx, j.Arguments)
 
 	res := Result{Description: j.Description, Value: value}
