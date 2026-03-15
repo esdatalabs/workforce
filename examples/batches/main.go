@@ -44,11 +44,14 @@ func batchJobs() []workforce.Job {
 
 func main() {
 
+	ctx := context.Background()
+	defer ctx.Done()
+
 	//Create the pool
 	pool := workforce.NewPool(numberOfJobs)
 
 	//Initialized the workers
-	go pool.Run(context.TODO())
+	go pool.Run(ctx)
 
 	//Bulk load and close the inbox
 	pool.LoodInbox(batchJobs())
